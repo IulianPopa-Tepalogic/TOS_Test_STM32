@@ -16,7 +16,7 @@ void __tos_bsp_init_stage_1_hook()
 	 */
 
 #ifdef TOS_FPU_ENABLED
-	volatile uint32_t* const CPACR = 0xE000ED88;
+	volatile uint32_t* const CPACR = (uint32_t*)0xE000ED88;
 	*CPACR |= (0xF << 20); //Enable the CPU
 #endif
 }
